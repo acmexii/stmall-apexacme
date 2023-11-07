@@ -9,4 +9,4 @@
 ![image](https://github.com/acmexii/stmall-apexacme/assets/35618409/e804e87f-7c2f-421a-b6ab-db04eb01e5c3)
 
 3. Domain Event Pub/Sub
-
+![image](https://github.com/acmexii/stmall-apexacme/assets/35618409/74e8288e-33ea-42ac-a25a-08ab3a540055)
