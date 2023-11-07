@@ -20,19 +20,12 @@ public class DeliveryMgmt {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
     private String userId;
-
     private Long orderId;
-
     private String productName;
-
     private Long productId;
-
     private Integer qty;
-
     private String status;
-
     private Date deliveryDt;
 
     @PostPersist
@@ -63,35 +56,26 @@ public class DeliveryMgmt {
         return deliveryMgmtRepository;
     }
 
-    //<<< Clean Arch / Port Method
     public static void startDelivery(Ordered ordered) {
-        //implement business logic here:
-
-        /** Example 1:  new item 
         DeliveryMgmt deliveryMgmt = new DeliveryMgmt();
+        deliveryMgmt.setProductName(ordered.getProducName());
+        deliveryMgmt.setProductId(ordered.getProductId());
+        deliveryMgmt.setQty(ordered.getQty());
+        deliveryMgmt.setStatus("DeliveryStarted");
+
         repository().save(deliveryMgmt);
-
-        DeliveryStarted deliveryStarted = new DeliveryStarted(deliveryMgmt);
-        deliveryStarted.publishAfterCommit();
-        */
-
-        /** Example 2:  finding and process
         
-        repository().findById(ordered.get???()).ifPresent(deliveryMgmt->{
-            
-            deliveryMgmt // do something
+        // DeliveryStarted deliveryStarted = new DeliveryStarted(deliveryMgmt);
+        // deliveryStarted.publishAfterCommit();
+
+/*         repository().findByOrderId(ordered.getId()).ifPresent(deliveryMgmt->{
+            deliveryMgmt.setProductName(ordered.getProducName());
             repository().save(deliveryMgmt);
-
-            DeliveryStarted deliveryStarted = new DeliveryStarted(deliveryMgmt);
-            deliveryStarted.publishAfterCommit();
-
-         });
-        */
-
+         }); */
     }
 
-    //>>> Clean Arch / Port Method
-    //<<< Clean Arch / Port Method
+
+
     public static void cancelDelivery(OrderCancelled orderCancelled) {
         //implement business logic here:
 

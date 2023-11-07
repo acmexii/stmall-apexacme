@@ -18,19 +18,12 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
     private String userId;
-
     private String producName;
-
     private Long productId;
-
     private Integer qty;
-
     private String status;
-
     private Date orderDt;
-
     private String address;
 
     @PostPersist
